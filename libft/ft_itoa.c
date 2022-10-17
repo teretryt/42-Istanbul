@@ -6,13 +6,13 @@
 /*   By: rturker <rturker@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 09:20:10 by rturker           #+#    #+#             */
-/*   Updated: 2022/10/10 18:20:59 by rturker          ###   ########.fr       */
+/*   Updated: 2022/10/11 11:12:13 by rturker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	digit_counter(long n)
+static long	digit_counter(long n)
 {
 	long	i;
 
@@ -32,7 +32,7 @@ long	digit_counter(long n)
 	return (i);
 }
 
-int	is_sign(int n)
+static int	is_sign(int n)
 {
 	if (n < 0)
 		return (1);

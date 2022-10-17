@@ -6,13 +6,13 @@
 /*   By: rturker <rturker@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:37:44 by rturker           #+#    #+#             */
-/*   Updated: 2022/10/10 13:24:07 by rturker          ###   ########.fr       */
+/*   Updated: 2022/10/11 11:12:30 by rturker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_counter(char const *s, char c)
+static int	word_counter(char const *s, char c)
 {
 	size_t	i;
 	int		words;
@@ -35,7 +35,7 @@ int	word_counter(char const *s, char c)
 	return (words);
 }
 
-char	*word_create(char *s, char c)
+static char	*word_create(char *s, char c)
 {
 	char	*str;
 	size_t	i;

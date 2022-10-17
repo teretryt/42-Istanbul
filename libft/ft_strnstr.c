@@ -6,33 +6,37 @@
 /*   By: rturker <rturker@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:04:46 by rturker           #+#    #+#             */
-/*   Updated: 2022/10/10 17:34:13 by rturker          ###   ########.fr       */
+/*   Updated: 2022/10/11 18:36:55 by rturker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
+	size_t	c;
+	size_t	n_len;
+	char	*hay;
 
+	if (!haystack && len == 0)
+		return (NULL);
 	i = 0;
-	if (n == 0)
-		return ((char *)s1);
-	/*
-	if (!s2)
-		return ((char *)s1);*/
-	while (i < n)
+	hay = (char *)haystack;
+	n_len = ft_strlen(needle);
+	if (n_len == 0 || haystack == needle)
+		return (hay);
+	while (hay[i] != '\0' && i < len)
 	{
-		if (ft_strncmp((char *)&s1[i], s2, ft_strlen(s2)) == 0)
-		{
-			if (i + ft_strlen(s2) > n)
-				return (NULL);
-			return ((char *)&s1[i]);
-		}
+		c = 0;
+		while (hay[i + c] != '\0' && needle[c] != '\0'
+			&& hay[i + c] == needle[c] && i + c < len)
+			c++;
+		if (c == n_len)
+			return (hay + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
 int main()

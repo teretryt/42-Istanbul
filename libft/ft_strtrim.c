@@ -6,7 +6,7 @@
 /*   By: rturker <rturker@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:46:44 by rturker           #+#    #+#             */
-/*   Updated: 2022/10/10 17:17:54 by rturker          ###   ########.fr       */
+/*   Updated: 2022/10/11 14:04:35 by rturker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 			i++;
 	if (i == ft_strlen(s1))
 	{
-		if (!(r = ft_strdup("")))
+		r = ft_strdup("");
+		if (!r)
 			return (NULL);
 		else
 			return (r);
@@ -37,12 +38,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 			j--;
 	return (ft_substr(s1, i, j - i + 1));
 }
-
+/*
 #include <stdio.h>
 int main()
 {
-	char f[] = "MQMQQMQQMMMQMQMQMQM";
-	char d[] = "MQ";
+	char f[] = "asdsadsadskeladsadasdsa";
+	char d[] = "dsa";
 	printf("%s",ft_strtrim(f,d));
-}
-
+}*/

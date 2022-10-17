@@ -6,7 +6,7 @@
 /*   By: rturker <rturker@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:56:31 by rturker           #+#    #+#             */
-/*   Updated: 2022/10/10 16:11:26 by rturker          ###   ########.fr       */
+/*   Updated: 2022/10/12 13:48:26 by rturker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-
-	i = 0;
 	if ((dst == 0) && (src == 0))
 		return (0);
 	if (dst <= src)

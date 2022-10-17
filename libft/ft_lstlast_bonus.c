@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rturker <rturker@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:20:43 by rturker           #+#    #+#             */
-/*   Updated: 2022/10/11 10:23:07 by rturker          ###   ########.fr       */
+/*   Created: 2022/10/07 18:17:33 by rturker           #+#    #+#             */
+/*   Updated: 2022/10/11 11:16:55 by rturker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*new;
-	int		i;
-	int		size;
-
-	size = 0;
-	while (s1[size])
-		++size;
-	new = malloc(sizeof(char) * (size + 1));
-	if (!new)
-		return (NULL);
-	i = 0;
-	while (s1[i])
+	if (lst == NULL)
+		return (0);
+	while (lst)
 	{
-		new[i] = s1[i];
-		i++;
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
 	}
-	new[i] = '\0';
-	return (new);
+	return (lst);
 }

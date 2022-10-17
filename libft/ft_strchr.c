@@ -6,7 +6,7 @@
 /*   By: rturker <rturker@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:08:08 by rturker           #+#    #+#             */
-/*   Updated: 2022/10/10 17:22:39 by rturker          ###   ########.fr       */
+/*   Updated: 2022/10/11 10:20:26 by rturker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	j = 0;
 	while (s[j] != (char)c)
 	{
-		if (s[j]== '\0')
+		if (s[j] == '\0')
 			return (NULL);
 		j++;
 	}

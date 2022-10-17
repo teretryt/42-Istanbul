@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	spc_chrc(char c)
+static int	spc_chrc(char c)
 {
 	if ((c == ' ' || c == '\t' || c == '\r'
 			|| c == '\n' || c == '\v' || c == '\f'))
