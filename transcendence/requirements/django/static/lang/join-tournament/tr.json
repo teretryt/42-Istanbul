@@ -1,0 +1,16 @@
+{
+	"defaultMode": "Bir Oyun Modu Seçin",
+	"classic": "Klasik",
+	"powerups": "Güçlendirmeli",
+	"boosted": "Hızlanmalı",
+	"createTournament": "Turnuva Oluştur",
+	"enterTournamentName": "Turnuva Adını Girin",
+	"joinATournament": "Bir Turnuvaya Katılın",
+	"joinedTournament": "Katıldığınız Turnuva",
+	"notJoinedTournament": "Katıldığınız bir turnuva yok!",
+	"tableName": "İsim",
+	"tableCreator": "Oluşturucu",
+	"tableMode": "Oyun Modu",
+	"tablePlayers": "Oyuncular",
+	"tableJoin": "Katıl"
+}

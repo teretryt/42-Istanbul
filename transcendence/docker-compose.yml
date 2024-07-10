@@ -1,0 +1,66 @@
+version: '3'
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  postgresql_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/rturker/data/postgresql
+      o: bind
+  medias:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/rturker/data/medias
+      o: bind
+  static:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/rturker/data/static
+      o: bind
+
+services:
+  django:
+    container_name: django
+    build: ./requirements/django
+    depends_on:
+      - postgres
+      - nginx
+    volumes:
+      - medias:/vol/medias
+      - static:/vol/static
+    networks:
+      - default
+    restart: always
+  postgres:
+    container_name: postgresql
+    build: ./requirements/postgresql
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    networks:
+      - default
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    restart: always
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx
+    ports:
+      - "443:443"
+      - "80:80"
+      - "3000:3000"
+    volumes:
+      - medias:/vol/medias
+      - static:/vol/static
+    restart: always
+    env_file:
+      - requirements/nginx/.env
+    networks:
+      - default
